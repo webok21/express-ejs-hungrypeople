@@ -1,0 +1,34 @@
+<%- include('./partials/header') %>
+
+    <main class="black-font">
+        <h1>DELICIOUS MENU</h1>
+
+        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor
+            magna.
+        </h3>
+
+        <% selection.forEach(element=> {%>
+            <div>
+                <h4>
+                    <%= element.sort %>
+                </h4>
+            </div>
+            <% }) %>
+
+                <% for( let i=0; i < 21; i++ ) { %>
+                    <div>
+                        <h3>
+                            <%= menu[i].food %>
+                        </h3>
+                        <p>
+                            <%= menu[i].description %>
+                        </p>
+                    </div>
+                    <h3>
+                        <%= menu[i].price %>
+                    </h3>
+                    <% } %>
+
+    </main>
+
+    <%- include('./partials/footer') %>
