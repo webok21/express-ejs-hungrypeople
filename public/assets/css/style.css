@@ -4,19 +4,19 @@
     font-family: 'Banny Round';
     font-style: normal;
     font-weight: normal;
-    src: local('Banny Round'), url('Banny-Round.woff') format('woff');
+    src: local('Banny Round'), url('/assets/font/Banny-Round.woff') format('woff');
 }
 @font-face {
     font-family: 'Banny Light Round';
     font-style: normal;
     font-weight: normal;
-    src: local('Banny Light Round'), url('Banny-LightRound.woff') format('woff');
+    src: local('Banny Light Round'), url('/assets/font/Banny-LightRound.woff') format('woff');
 }
 @font-face {
     font-family: 'Banny Bold Round';
     font-style: normal;
     font-weight: normal;
-    src: local('Banny Bold Round'), url('Banny-BoldRound.woff') format('woff');
+    src: local('Banny Bold Round'), url('/assets/font/Banny-BoldRound.woff') format('woff');
 }
 * {
     margin: 0;
@@ -32,8 +32,18 @@ a {
     color: #fff;
     text-decoration: none;
 }
-
-
+h1 {
+    position: relative;
+}
+h1::before {
+    content: "";
+    position: absolute;
+    width: 63px;
+    bottom: 0;
+    left: 46%;
+    border-bottom: 4px solid #E8C300;
+    border-radius: 5px;
+}
 
 form div {
     display: flex;
@@ -47,15 +57,17 @@ input, textarea, select {
     border-radius: 5px;
     border: none;
     outline: none;
-    width: 100%;
-    padding: 5%;
+    width: 98%;
+    padding: 3% 5%;
     margin: 5px;
 }
 input[type=submit] {
+    color: #fff;
     background: #E8C300;
 }
-
-
+main {
+    min-height: 8vh;
+}
 header {    
     background: url(/assets/img/logo.png) center 6% / 10% no-repeat, url(/assets/img/header-bg.jpg) center / cover no-repeat;
     min-height: 100vh;
@@ -87,16 +99,12 @@ li {
     text-align: center;
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    padding-top: 16%;
-}
-.opening-time {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
+    padding-top: 15%;
 }
 .opening-time p {
-    transform: rotate(270deg);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-left: 40%;
 }
 header h2 {
     letter-spacing: 5px;
@@ -105,19 +113,23 @@ header h1 {
     font-family: 'Banny Round';
     font-size: 8em;
 }
+.header-links {
+    margin-top: 3%;
+}
 button {
     color: #fff;
     font-weight: bold;
     width: 22%;
-    height: 30%;
+    height: 8vh;
     border-radius: 5px;
+    cursor: pointer;
 }
-.header-grid button:first-of-type {
+.btn-yellow {
     background: #E8C300;
     border: none;
     margin-right: 3%;
 }
-.header-grid button:last-of-type {
+.btn-transparent {
     background: transparent;
     border: 1px solid #fff;
 }
@@ -134,15 +146,12 @@ button {
     width: 28%;
     padding-bottom: 7%;
 }
-
-
-
-
 .about-section {
     color: #000;
 }
 .two-grid {    
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -151,7 +160,7 @@ button {
     padding: 4%;
 }
 .two-grid h1, .three-grid h1 { 
-    font-family: 'Banny Light Round';
+    font-family: 'Banny Bold Round';
     font-size: 3em;
 }
 .two-grid h3, .three-grid h3 { 
@@ -161,30 +170,19 @@ button {
 .two-grid p, .three-grid p { 
     font-size: 1.2em;
 }
-
-
-
 section > h3 {
     letter-spacing: 5px;
     text-align: center;
     padding-top: 40px;
 }
-
-
 .team-section {
     color: #fff;
     background: url("/assets/img/specialty's-bg1.png") center / cover;
 }
-
-
-
-
 .galerie-section, .events-section { 
 color: #fff;
 background: url("/assets/img/specialty's-bg2.png") center / cover;
 }
-
-
 .events-tel {
     color: rgba(255, 255, 255, 0,5);
     text-align: center;
@@ -198,12 +196,57 @@ background: url("/assets/img/specialty's-bg2.png") center / cover;
 .events-tel span, .tel span {
     font-weight: bold;
 } 
-
-
+.selection-border {
+    display: inline-block;
+    border-right: 1px solid rgba(51,51,51,0.5);
+    padding: 2vh 3%;
+    margin: 5vh 0;
+    
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.menu-grid h3 {
+    font-family: 'Banny Bold Round';
+    font-size: 1.5em;
+}
+.menu-grid p {
+    color: rgba(51,51,51,0.5);
+}
+.menu-content {
+    display: flex;
+    justify-content: center;
+}
 .black-font {
     color: #000;
+    text-align: center;
+    margin: 8vh 0;
 }
-
+.black-font h1 {
+    font-family: 'Banny Bold Round';
+    font-size: 3em;
+}
+.contact-form {
+    width: 90%;
+    margin: 0 auto;
+}
+.contact-form input {
+    padding: 1%;
+}
+.contact-form textarea {
+    width: 99%;
+    padding: 2%;
+}
+.contact-form input[type=submit] {
+    width: 65%;
+}
+.contact-form img {
+    width: 2%;
+}
+.contact-form span {
+    margin-top: 2%;
+}
 footer {
     background: rgba(0, 0, 0, 0.9);
     color: rgba(255, 255, 255, 0,5);
@@ -214,7 +257,6 @@ footer {
 footer span {
     font-weight: bold;
 }
-
 #error img {
     padding: 15vh 0 18vh 20%;
 }

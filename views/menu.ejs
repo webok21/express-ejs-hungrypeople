@@ -8,27 +8,33 @@
         </h3>
 
         <% selection.forEach(element=> {%>
-            <div>
+            <div class="selection-border">
                 <h4>
                     <%= element.sort %>
                 </h4>
             </div>
             <% }) %>
 
-                <% for( let i=0; i < 21; i++ ) { %>
-                    <div>
-                        <h3>
-                            <%= menu[i].food %>
-                        </h3>
-                        <p>
-                            <%= menu[i].description %>
-                        </p>
-                    </div>
-                    <h3>
-                        <%= menu[i].price %>
-                    </h3>
-                    <% } %>
+                <div class="menu-grid">
+                    <% for( let i=0; i < 21; i++ ) { %>
 
+                        <div class="menu-content">
+                            <div>
+                                <h3>
+                                    <%= menu[0].food %>
+                                </h3>
+                                <p>
+                                    <%= menu[0].description %>
+                                </p>
+                            </div>
+
+                            <h3>
+                                <%= menu[0].price %>
+                            </h3>
+
+                        </div>
+                        <% } %>
+                </div>
     </main>
 
     <%- include('./partials/footer') %>
